@@ -20,6 +20,10 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
+## Reference
+* https://github.com/jeremygiberson/vagrant-gitcredentials
+* http://developer.github.com/v3/
+
 ## Contributing
 
 1. Fork it
