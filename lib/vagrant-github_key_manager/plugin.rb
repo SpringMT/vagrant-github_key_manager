@@ -10,14 +10,17 @@ if Vagrant::VERSION < "1.2.0"
   raise "The Vagrant AWS plugin is only compatible with Vagrant 1.2+"
 end
 
+require 'vagrant-github_key_manager/action/add_key'
+require 'vagrant-github_key_manager/action/remove_key'
+
 module VagrantPlugins
   module GithubKeyManager
     class Plugin < Vagrant.plugin("2")
-      name 'GithubKeyManager'
+      name 'vagrant-github_key_manager'
       description <<-DESC
       DESC
 
-      config(:github_key_manager, :endpoint) do
+      config 'github_key_manager' do
         require_relative "config"
         Config
       end

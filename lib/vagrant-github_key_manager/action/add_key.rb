@@ -37,7 +37,7 @@ module VagrantPlugins
             # execute script w/ permissions
             @ui.info("We will now generate an ssh key and add it to your github account.")
             gitUsername = @ui.ask("What is your github account name? ")
-            gitPassword = @ui.ask_noecho("What is your github account password? (not stored) ")
+            gitPassword = @ui.ask("What is your github account password? (not stored) ", echo: false)
 
             @machine.communicate.execute("sh ~/.ssh/github.sh #{gitUsername} #{gitPassword}")
           end

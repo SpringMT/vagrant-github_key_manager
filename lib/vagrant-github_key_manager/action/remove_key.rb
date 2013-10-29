@@ -12,11 +12,12 @@ module VagrantPlugins
           config = env[:global_config].github_key_manager
           endpoint = config.endpoint
 
-          @ui.info("We will now generate an ssh key and add it to your github account.")
-          gitUsername = @ui.ask("What is your github account name? ")
-          gitPassword = @ui.ask_noecho("What is your github account password? (not stored) ")
+          #@ui.info("We will now generate an ssh key and add it to your github account.")
+          #gitUsername = @ui.ask("What is your github account name? ")
+          #gitPassword = @ui.ask("What is your github account password? (not stored) ", echo: false)
 
-          @machine.communicate.execute("curl -X DELETE -u #{gitUsername}:#{gitPassword} #{endpoint}")
+          #@machine.communicate.execute("curl -X DELETE -u #{gitUsername}:#{gitPassword} #{endpoint}")
+          @ui.info(endpoint)
           @ui.info("delete ssh key")
           @app.call(env)
         end
@@ -24,6 +25,6 @@ module VagrantPlugins
       end
     end
   end
-end 
+end
 
 
