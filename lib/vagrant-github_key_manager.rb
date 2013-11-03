@@ -31,7 +31,9 @@ module Vagrant
         # here because `gets` can return a nil, for example in the case
         # that ctrl-D is pressed on the input.
         input = if opts[:echo] == false
-          $stdin.noecho(&:gets) || ""
+          noecho_input = $stdin.noecho(&:gets) || ""
+          print "\n"
+          noecho_input
         else
           $stdin.gets || ""
         end

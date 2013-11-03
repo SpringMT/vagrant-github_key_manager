@@ -8,7 +8,7 @@ describe VagrantPlugins::GithubKeyManager::Config do
     context 'default' do
       subject {instance}
       it do
-        expect(instance.endpoint).to eq 'https://api.github.com/user/keys'
+        expect(instance.github_api_url).to eq 'https://api.github.com/user/keys'
       end
     end
 

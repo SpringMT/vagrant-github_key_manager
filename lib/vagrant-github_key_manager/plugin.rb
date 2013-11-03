@@ -11,7 +11,7 @@ if Vagrant::VERSION < "1.2.0"
 end
 
 require 'vagrant-github_key_manager/action/add_key'
-require 'vagrant-github_key_manager/action/remove_key'
+require 'vagrant-github_key_manager/action/delete_key'
 
 module VagrantPlugins
   module GithubKeyManager
@@ -30,7 +30,7 @@ module VagrantPlugins
       end
 
       action_hook(:github_key_manager, :machine_action_destroy) do |hook|
-        hook.append Action::RemoveKey
+        hook.prepend Action::DeleteKey
       end
 
     end
