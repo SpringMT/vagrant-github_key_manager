@@ -1,4 +1,4 @@
-# Vagrant::GithubKeyManager
+# Vagrant::GithubKeyManager [![Build Status](https://travis-ci.org/SpringMT/vagrant-github_key_manager.png)](https://travis-ci.org/SpringMT/vagrant-github_key_manager)
 
 On "vagrant up", generat an SSH key and register with your github.com or GH:E account.  
 This allows the Guest VM to execute git statements without setting host machine ssh-agent and vagrant's forward_agent.
