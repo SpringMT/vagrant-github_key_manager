@@ -64,8 +64,6 @@ end
 `ssh-add ~/.ssh/github_rsa`
 EOF
             @machine.communicate.execute("ruby -e '#{execute_script}'")
-            #@machine.communicate.execute('eval $(ssh-agent)')
-            #@machine.communicate.execute('ssh-add ~/.ssh/github_rsa')
             @ui.info("register ssh key to github")
           end
 
